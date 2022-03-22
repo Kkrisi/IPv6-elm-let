@@ -1,0 +1,85 @@
+Pc0 Pc1 Pc2
+
+PCR
+mutt, mc, apache, php
+
+Célgépen kell: python, sudo, ssh
+__Ansible__
+
+
+hostname átnevezés nano /etc/hostname
+apt update
+apt install ssh python python-apt sudo
+
+adduser amd
+visudo  (rendszergazdai jogot adunk)
+
+--root alá--
+amd     All=NOPASSWD: ALL
+--sudo konyvtaratt fel kellett hoza telepiteni--
+
+su- amd
+-- amd profilba belepunk--
+
+exit
+nano /etc/hosts
+ls /
+
+
+pc2
+apt update
+apt install ansible ssh
+
+
+PCR:
+su -janos
+ssh-keygen
+
+ssh-copy-id amd@172.16.16.xy
+ssh amd@172.16.16.xy
+
+ssh-copy-id amd@172.16.16.zu
+ssh amd@172.16.16.zu
+
+
+
+PCR gepen:
+mkdir gepek
+cd gepek
+nano ansible.cfg
+
+--------------
+[defaults]
+inventory = hosts
+--------------
+
+
+
+
+
+nano hosts
+-------------------
+172.16.16.xy
+172.16.16.zu
+---------------
+
+
+
+nano telep.yml
+----------------
+---
+-   hosts: gepek1
+    remote_user: janos
+    tasks:
+ 
+      - name: Webszerver telepítése
+        apt:
+          name: apache2
+          state: present
+          update_cache: yes
+        become: yes
+-----------------
+
+
+
+http://szit.hu/doku.php?id=oktatas:linux:konfiguraciokezeles:ansible:playbook:kezdes
