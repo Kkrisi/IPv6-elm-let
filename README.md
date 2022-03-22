@@ -1,10 +1,32 @@
-ipv6 unicast-routing
+Pc0 Pc1 Pc2
 
-ipv6 router ospf 100
+PCR
+mutt, mc, apache, php
 
-router-id 3.3.3.3
+Célgépen kell: python, sudo, ssh
+__Ansible__
 
-ipv6 ospf 100 area 0
+
+hostname átnevezés nano /etc/hostname
+apt update
+apt install ssh python python-apt sudo
+
+adduser amd
+visudo  (rendszergazdai jogot adunk)
+
+--root alá--
+amd     All=NOPASSWD: ALL
+--sudo konyvtaratt fel kellett hoza telepiteni--
+
+su- amd
+-- amd profilba belepunk--
+
+exit
+nano /etc/hosts
+ls /
 
 
-(ROUTEREN: do show ipv6 int brief, a szamitogep fele nezo defaultgateway hosszu kodsort copyzzuk be a szamitogep deafultgeatewayebe)
+pc2
+apt update
+apt install ansible ssh
+
