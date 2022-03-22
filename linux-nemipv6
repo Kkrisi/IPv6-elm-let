@@ -72,12 +72,26 @@ nano telep.yml
     remote_user: janos
     tasks:
  
-      - name: Webszerver telepítése
+      - name: Mc telepítése
         apt:
-          name: apache2
+          name: mc
           state: present
           update_cache: yes
         become: yes
+        
+      - name: Mutt telepítése
+        apt:
+          name: mutt
+          state: present
+          update_cache: yes
+        become: yes
+        
+      - name: Mari felhasználó
+        user:
+          name: mari
+          comment: Zsenge Maria
+          shell: /bin/bash
+          password: "{{'12345' | password_hash('sha512', 'abda')}}"
 -----------------
 
 
