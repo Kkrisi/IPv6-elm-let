@@ -97,3 +97,30 @@ nano telep.yml
 
 
 http://szit.hu/doku.php?id=oktatas:linux:konfiguraciokezeles:ansible:playbook:kezdes
+
+
+
+
+
+
+
+
+
+
+2022-03-23
+apt update
+apt install ssh mariadb-server
+ss -lt
+scp zoldZrt.sql janos@172.16.16.195:
+cd /home/janos ---itt lesz a zoldzrt
+ssh janos@172.16.16.195
+su -
+mariadb < /home/janos/zoldZrt.sql
+mariadb
+
+
+
+
+
+
+
